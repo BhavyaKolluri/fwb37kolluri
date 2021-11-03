@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  h1= title
+  p Search Results Fairy Doll  
+  p 
+  div(class="container-fluid")
+        div(class="row")
+            -
+                let fairydoll = [
+                    {
+                        "name": "Adelina",
+                        "color": "blue" ,
+                        "cost": 30
+                    },
+                    {
+                        "name": "Aine",
+                        "color": "pink" ,
+                        "cost": 25
+                    },
+                    {
+                        "name": "Alette",
+                        "color": "white" ,
+                        "cost": 40
+                    },                   
+                ]
+            each v,index in fairydoll 
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.name}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.color}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.cost}
+//-   script.                
+//-         function buy(intemNo)
+//-         {
+//-               alert(`you purchased Item ${intemNo+1}`)
+//-         }
